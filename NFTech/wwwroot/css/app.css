@@ -234,6 +234,7 @@
         }
         .menu-toggle {
             display: inline-flex;
+            justify-content: center;
         }
         .nav-links-custom {
             position: fixed;
