@@ -1,0 +1,306 @@
+@{
+    ViewData["Title"] = "Service Catalog";
+    // Allow JS to pick up initial section to scroll to
+    var targetDivision = ViewData["TargetDivision"]?.ToString();
+}
+
+<div id="initial-target" data-target="@targetDivision" style="display:none;"></div>
+
+<!-- Services Header Hero -->
+<section class="pt-[150px] lg:pt-[180px] pb-[60px] border-b border-border-color bg-[#040911] content-section">
+    <div class="container-inner">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-[30px] lg:gap-[60px] items-center">
+            <div>
+                <span class="text-[0.8rem] font-bold uppercase tracking-[3px] text-accent-red mb-[12px] block">Full Business Scope</span>
+                <h1 class="text-[2.3rem] lg:text-[4rem] font-bold tracking-[-2px] leading-[1.1] mb-[24px]">Comprehensive IT Services in South Africa</h1>
+                <p class="text-[1.2rem] text-light-gray opacity-80 max-w-[680px]">Explore the full suite of specialized technology subdivisions we manage to ensure robust, efficient, and reliable IT operations for your enterprise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Division Explorer Layout -->
+<section class="bg-primary-dark pt-[50px] overflow-visible content-section" id="explorer">
+    <div class="container-inner">
+        
+        <!-- Horizontal Sticky Division Switcher Navigation Capsule -->
+        <div class="sticky top-[80px] lg:top-[110px] z-[100] bg-[#121f31]/85 backdrop-blur-[15px] border border-border-color rounded-[20px] lg:rounded-[80px] p-[6px] lg:p-[8px] flex justify-between gap-[12px] overflow-x-auto mb-[80px] lg:mb-[140px] shadow-[0_15px_35px_rgba(0,0,0,0.3)] explorer-nav-capsule" style="scrollbar-width: none;">
+            <a href="/home/services?id=network" data-target="network" class="sidebar-link active flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">01</div> Network
+            </a>
+            <a href="/home/services?id=infrastructure" data-target="infrastructure" class="sidebar-link flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">02</div> Infrastructure
+            </a>
+            <a href="/home/services?id=security" data-target="security" class="sidebar-link flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">03</div> Security
+            </a>
+            <a href="/home/services?id=managed" data-target="managed" class="sidebar-link flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">04</div> Support
+            </a>
+            <a href="/home/services?id=digital" data-target="digital" class="sidebar-link flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">05</div> Digital
+            </a>
+            <a href="/home/services?id=ai" data-target="ai" class="sidebar-link flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
+                <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">06</div> AI Integration
+            </a>
+        </div>
+
+        <style>
+            .explorer-nav-capsule::-webkit-scrollbar { display: none; }
+            .sidebar-link.active .sidebar-badge { background: theme('colors.white'); color: theme('colors.accent-red'); }
+            
+            .cap-card::before {
+                content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background-color: transparent; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .cap-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+            .cap-card:hover::before { background-color: theme('colors.accent-red'); }
+            .cap-card h4::before {
+                content: ''; width: 8px; height: 8px; border-radius: 50%; background-color: theme('colors.accent-red'); display: inline-block;
+            }
+        </style>
+
+        <!-- Detailed Subdivision Contents -->
+        <div class="flex flex-col gap-[120px]">
+
+            <!-- Division 1: Network & Connectivity -->
+            <div id="network" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/battery.jpg" alt="Network architecture" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 01</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">Network & Connectivity</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Establishing and managing reliable, high-speed physical and wireless communication backbones required for modern environments.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Home & Business Fiber</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Provisioning and facilitating reliable, high-speed fiber internet solutions tailored specifically for modern residential and rigorous corporate environments.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Advanced Network Failovers</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Designing and implementing resilient network architectures with automated failover routing to secondary backup connections to prevent downtime.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Structured Cabling</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Designing and installing Category cabling solutions to provide a stable, organized physical backbone for dependable high-speed data transfer.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Local Area Networking</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Implementing and optimizing LAN and WLAN environments to ensure high-speed, low-latency connectivity across your entire physical footprint.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division 2: Infrastructure -->
+            <div id="infrastructure" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/infrastructure.jpg" alt="Hardware setup" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 02</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">Infrastructure</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Handling physical hardware procurement, business telecommunications, hosting, and server lifecycles.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Hardware Provisioning</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Sourcing, configuring, and deploying enterprise-grade hardware tailored specifically to your unique operational and budget requirements.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Unified Communications (PBX)</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Deploying and supporting modern PBX and VoIP telephone networks designed for cost-effective, crystal-clear business telecommunications.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Server Setup & Hosting</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Professional configuration and hosting of server environments, offering flexible options from on-premise hardware setups to fully cloud-based infrastructures.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Server Maintenance & Migrations</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Managing scheduled system maintenance and executing migrations (P2V, V2V, or Cloud) with minimal operational disruption to daily tasks.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden lg:col-[1/-1]">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Mailbox & Domain Hosting</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Secure, centralized management and hosting for professional business domains and corporate email platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division 3: Cyber & Physical Security -->
+            <div id="security" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/security.jpg" alt="Technical security" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 03</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">Cyber & Physical Security</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Providing unified protection and securing digital assets as well as physical business premises.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Perimeter Defence</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Deploying and configuring managed firewall solutions designed to protect your network edge and block unauthorized access attempts.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Endpoint Management</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Centralized administration of security policies, managed antivirus deployments, and automated software updates across all user workstations.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Backup & Disaster Recovery</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Implementing automated, encrypted backup solutions to facilitate rapid data restoration in the event of hardware failure or corruption.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Surveillance Systems (CCTV)</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Supplying end-to-end IP camera systems and Network Video Recorder (NVR) management to assist in physical security and premises monitoring.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden lg:col-[1/-1]">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Biometric Access Control</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Deploying and managing biometric entry systems to secure physical entry points, manage user permissions, and track staff movement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division 4: Managed Services & Consulting -->
+            <div id="managed" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/digital.jpg" alt="Consulting environment" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 04</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">Managed Services & Consulting</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Focusing on proactive IT management, operational audits, and technical advisory services to keep operations optimized.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Proactive Maintenance Plans</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Regular system health checks, patch management, and remote monitoring to resolve potential issues before they impact daily productivity.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">IT Environment Audits</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Comprehensive technical audits of existing, legacy, or failing IT setups to identify hazardous infrastructure and power vulnerabilities.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Site Remediation</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Formulating strategic remediation plans and hardware recommendations to resolve legacy issues and restore environmental stability.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Incident Reporting</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Providing detailed incident reports following technical events to ensure root causes and resolution efforts are clearly understood.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division 5: Digital -->
+            <div id="digital" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/code.jpg" alt="Development structures" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 05</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">Digital Solutions</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Building modern, scalable, and responsive web platforms for businesses of all sizes, from startups to large enterprises.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Front-End Development</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Designing and building visually clean, highly responsive web interfaces that align with client branding and provide intuitive user experiences.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Back-End Development</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Developing secure, robust server-side logic, database architectures, and customized APIs to power complex business workflows.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden lg:col-[1/-1]">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Full-Stack Business Solutions</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">End-to-end web development, offering custom website design, e-commerce platforms, customer portals, and corporate web application services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division 6: AI Integration -->
+            <div id="ai" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] pb-0 pt-[20px] reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
+                    <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
+                        <img src="~/AI.jpg" alt="AI integration" class="w-full h-full object-cover grayscale transition-premium">
+                    </div>
+                    <div>
+                        <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Division 06</span>
+                        <h2 class="text-[2.3rem] lg:text-[2.5rem] text-white mb-[16px] tracking-[-1px] leading-[1.15]">AI & Automation</h2>
+                        <p class="text-[1.05rem] text-light-gray opacity-80">Guiding organizations through the integration of artificial intelligence, helping transition manual processes into automated workflows.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">AI Integration & Consulting</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Assessing operational workflows to identify where cognitive computing and machine learning can drive efficiency and reduce human error.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Custom AI Solutions</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Deploying custom-trained chatbots, intelligent virtual assistants, and Large Language Model (LLM) integrations designed for productivity.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Process Automation</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Streamlining repetitive administrative tasks using intelligent software robots and automated pipeline triggers.</p>
+                    </div>
+                    <div class="cap-card bg-[#0d1622] border border-border-color rounded-[8px] p-[30px] transition-premium relative overflow-hidden">
+                        <h4 class="text-[1.25rem] text-white mb-[12px] flex items-center gap-[10px]">Intelligent Data Analytics</h4>
+                        <p class="text-[0.95rem] text-light-gray opacity-75 leading-[1.6]">Leveraging machine learning algorithms to process complex company data, predict trends, and deliver actionable business insights.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Wide Ribbon Action Section -->
+<section class="bg-ribbon-bg border-y border-border-color p-[60px_8%] text-center">
+    <div class="container-inner">
+        <div>
+            <h2 class="text-[2.3rem] lg:text-[2.5rem] mb-[16px]">Ready to elevate your infrastructure?</h2>
+            <p class="text-light-gray opacity-80 max-w-[600px] mx-auto mb-[30px]">Discuss your operational requirements with our systems architects today to construct a reliable baseline blueprint.</p>
+            <a href="/home/index#contact" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Launch Connection</a>
+        </div>
+    </div>
+</section>
+
+<!-- Operational Commitments Section -->
+<section class="bg-[#040911] border-t border-border-color content-section">
+    <div class="container-inner">
+        <div class="mb-[60px] text-center reveal">
+            <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Service Levels</span>
+            <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">Operational Commitments</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[30px]">
+            <div class="bg-white/5 border border-border-color rounded-[12px] p-[40px_30px] text-center transition-premium hover:border-white/20 hover:-translate-y-[4px] reveal">
+                <span class="text-[2rem] text-accent-red mb-[24px] inline-block">⚡</span>
+                <h3 class="text-[1.3rem] mb-[12px] text-white">Targeted Response Times</h3>
+                <p class="text-[0.9rem] text-light-gray opacity-75">Support requests are prioritized strictly based on business impact, ensuring critical issues receive immediate attention according to your specific SLA.</p>
+            </div>
+            <div class="bg-white/5 border border-border-color rounded-[12px] p-[40px_30px] text-center transition-premium hover:border-white/20 hover:-translate-y-[4px] reveal">
+                <span class="text-[2rem] text-accent-red mb-[24px] inline-block">📈</span>
+                <h3 class="text-[1.3rem] mb-[12px] text-white">Availability Targets</h3>
+                <p class="text-[0.9rem] text-light-gray opacity-75">Utilizing robust infrastructure architectures to strive for exceptional uptime targets (e.g., 99.9% uptime objectives) across all managed environments.</p>
+            </div>
+            <div class="bg-white/5 border border-border-color rounded-[12px] p-[40px_30px] text-center transition-premium hover:border-white/20 hover:-translate-y-[4px] reveal">
+                <span class="text-[2rem] text-accent-red mb-[24px] inline-block">⚙</span>
+                <h3 class="text-[1.3rem] mb-[12px] text-white">Maintenance Windows</h3>
+                <p class="text-[0.9rem] text-light-gray opacity-75">To reduce day-to-day downtime, all scheduled system updates and major maintenance tasks are performed during agreed-upon off-peak hours.</p>
+            </div>
+            <div class="bg-white/5 border border-border-color rounded-[12px] p-[40px_30px] text-center transition-premium hover:border-white/20 hover:-translate-y-[4px] reveal">
+                <span class="text-[2rem] text-accent-red mb-[24px] inline-block">🛡</span>
+                <h3 class="text-[1.3rem] mb-[12px] text-white">Integrity Limitations</h3>
+                <p class="text-[0.9rem] text-light-gray opacity-75">We implement robust backup systems; however, legal liability for localized outages or systemic issues caused by third-party ISPs and software vendors is limited.</p>
+            </div>
+        </div>
+    </div>
+</section>

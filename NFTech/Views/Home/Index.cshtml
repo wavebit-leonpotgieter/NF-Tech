@@ -1,0 +1,212 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-[130px] lg:pt-[160px] pb-[80px] px-8 md:px-[8%] relative w-full overflow-hidden" id="hero">
+    <div class="container-inner">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-[50px] lg:gap-[60px] items-center text-center lg:text-left">
+            <div>
+                <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Secure Operations</span>
+                <h1 class="text-[2.3rem] md:text-[4rem] font-bold leading-[1.1] tracking-[-2px] mb-[24px]">Reliable IT Solutions Built For Scale</h1>
+                <p class="text-[1.15rem] text-light-gray opacity-80 mb-[36px] max-w-[560px] mx-auto lg:mx-0">We configure, optimize, and defend your business systems. Get high-speed networking, secure cloud hosting, and robust protections that keep your team moving forward.</p>
+                <div class="flex gap-[16px] flex-wrap justify-center lg:justify-start">
+                    <a asp-controller="Home" asp-action="Services" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Explore Services</a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium cursor-pointer whitespace-nowrap border border-border-color text-white bg-white/5 hover:border-white hover:bg-white/10 hover:-translate-y-[2px]">Consult Our Team</a>
+                </div>
+            </div>
+            <div class="relative p-[20px]">
+                <div class="hero-outline-box hidden lg:block"></div>
+                <div class="relative z-[2] w-full h-[380px] lg:h-[480px] rounded-[12px] overflow-hidden lg:translate-x-[15px] lg:translate-y-[15px] shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
+                    <img src="~/images/code.jpg" alt="Infrastructure management" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Ribbon Section -->
+<section class="p-0 relative z-10 overflow-visible">
+    <div class="relative lg:absolute lg:top-[-120px] lg:left-[8%] flex flex-row justify-center items-center lg:justify-start gap-[12px] md:gap-[20px] lg:gap-[30px] z-[12] py-[40px] lg:py-0 w-full px-8 lg:px-0">
+        <div class="bg-[#0d1622] border border-border-color border-b-[4px] border-b-accent-red w-[145px] md:w-[200px] h-[180px] md:h-[220px] p-[16px_12px] md:p-[30px_24px] rounded-[8px] flex flex-col justify-between shadow-[0_20px_45px_rgba(0,0,0,0.4)] relative overflow-hidden">
+            <img src="~/images/infrastructure.jpg" alt="" class="stat-card-img-bg">
+            <div class="relative z-[2] h-full flex flex-col justify-between">
+                <div class="font-display text-[2.2rem] md:text-[3rem] font-bold text-white leading-none">99.9%</div>
+                <div>
+                    <div class="text-[0.8rem] md:text-[0.95rem] font-semibold text-light-gray opacity-90">Target Uptime</div>
+                    <a href="#events" class="text-[0.75rem] md:text-[0.8rem] text-accent-red no-underline font-bold mt-[4px] md:mt-[8px] block">View Metrics &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#0d1622] border border-border-color border-b-[4px] border-b-accent-red w-[145px] md:w-[200px] h-[180px] md:h-[220px] p-[16px_12px] md:p-[30px_24px] rounded-[8px] flex flex-col justify-between shadow-[0_20px_45px_rgba(0,0,0,0.4)] relative overflow-hidden">
+            <img src="~/images/digital.jpg" alt="" class="stat-card-img-bg">
+            <div class="relative z-[2] h-full flex flex-col justify-between">
+                <div class="font-display text-[2.2rem] md:text-[3rem] font-bold text-white leading-none">06</div>
+                <div>
+                    <div class="text-[0.8rem] md:text-[0.95rem] font-semibold text-light-gray opacity-90">Subdivisions</div>
+                    <a asp-controller="Home" asp-action="Services" class="text-[0.75rem] md:text-[0.8rem] text-accent-red no-underline font-bold mt-[4px] md:mt-[8px] block">View Divisions &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-ribbon-bg h-[100px] w-full hidden lg:flex items-center justify-end px-[8%] border-y border-border-color">
+        <div class="text-light-gray opacity-70 text-[0.9rem] flex gap-[20px]">
+            <span>Reliability</span>
+            <span>•</span>
+            <span>Proactive Protection</span>
+            <span>•</span>
+            <span>Structured Infrastructure</span>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="content-section pt-[180px] bg-[#040911]" id="about">
+    <div class="container-inner">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[50px] lg:gap-[80px] items-center">
+            <div class="reveal">
+                <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Corporate Bio</span>
+                <h2 class="text-[2.3rem] lg:text-[3rem] leading-[1.15] mb-[24px]">Providing high-performance technical frameworks</h2>
+                <p class="text-[1.1rem] text-light-gray opacity-80 mb-[24px]">Our focus is to provide reliable technology connections, organized physical architecture, and locked-down network structures for businesses looking to grow smoothly.</p>
+                <p class="text-[1.1rem] text-light-gray opacity-80 mb-[24px]">We lift the operational burden off your teams by handling hardware supply, network configuration, and ongoing maintenance with dedicated support standards.</p>
+            </div>
+            <div class="relative h-[380px] lg:h-[480px] flex items-center justify-center mt-[40px] lg:mt-0 reveal">
+                <div class="collage-frame-line w-[280px] h-[280px] left-[10%] bottom-[5%]"></div>
+                <div class="collage-img w-[240px] h-[320px] top-0 left-[15%] z-[2]">
+                    <img src="~/images/digital.jpg" alt="Tech Workplace" class="w-full h-full object-cover">
+                </div>
+                <div class="collage-img w-[220px] h-[280px] bottom-0 right-[15%] z-[3] border-t-[4px] border-accent-red">
+                    <img src="~/images/AI.jpg" alt="System Monitoring" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="content-section bg-primary-dark" id="services">
+    <div class="container-inner">
+        <div class="flex justify-between items-end mb-[60px] flex-wrap gap-[24px] reveal">
+            <div>
+                <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Divisions</span>
+                <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">A simplified system for all IT operations</h2>
+            </div>
+            <a asp-controller="Home" asp-action="Services" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium cursor-pointer whitespace-nowrap border border-border-color text-white bg-white/5 hover:border-white hover:bg-white/10 hover:-translate-y-[2px]">Catalog Page &rarr;</a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-[50px] lg:gap-[30px]">
+            <div class="arch-card bg-transparent text-left transition-premium reveal">
+                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
+                    <img src="~/images/battery.jpg" alt="Network & Infrastructure" class="w-full h-full object-cover grayscale transition-premium">
+                </div>
+                <h3 class="text-[1.4rem] mb-[12px] text-white">Network & Infrastructure</h3>
+                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Fast structured cabling, dedicated business fiber setups, and customized automated backup lines to ensure continuous workflows.</p>
+            </div>
+
+            <div class="arch-card bg-transparent text-left transition-premium reveal">
+                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
+                    <img src="~/images/security.jpg" alt="Cyber & physical Safety" class="w-full h-full object-cover grayscale transition-premium">
+                </div>
+                <h3 class="text-[1.4rem] mb-[12px] text-white">Cyber & physical Safety</h3>
+                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Comprehensive managed firewalls, individual computer protections, biometric access entry, and modern CCTV video surveillance setups.</p>
+            </div>
+
+            <div class="arch-card bg-transparent text-left transition-premium reveal">
+                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
+                    <img src="~/images/support.jpg" alt="Managed Support" class="w-full h-full object-cover grayscale transition-premium">
+                </div>
+                <h3 class="text-[1.4rem] mb-[12px] text-white">Managed Support</h3>
+                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Planned software updates, routine hardware health evaluations, structural environment audits, and post-event incident reporting.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Commitments Section -->
+<section class="content-section bg-[#040911] border-t border-border-color" id="events">
+    <div class="container-inner">
+        <div class="mb-[60px] reveal">
+            <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Protocols</span>
+            <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">Performance Benchmarks & Standards</h2>
+        </div>
+
+        <div class="mt-[50px] flex flex-col gap-[16px] reveal">
+            <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
+                <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
+                    <span class="text-[0.8rem] text-accent-red uppercase">SLA</span>
+                </div>
+                <div>
+                    <div class="text-[1.15rem] font-semibold">Targeted Response Times</div>
+                    <p class="text-[0.9rem] text-light-gray opacity-70">Support requests prioritized strictly based on business impact.</p>
+                </div>
+                <div class="text-left md:text-right text-[0.9rem] text-light-gray opacity-80">
+                    Operational Priority Tier
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
+                <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
+                    <span class="text-[0.8rem] text-accent-red uppercase">UP</span>
+                </div>
+                <div>
+                    <div class="text-[1.15rem] font-semibold">Availability Objectives</div>
+                    <p class="text-[0.9rem] text-light-gray opacity-70">Utilizing failover designs to target 99.9% uptime limits.</p>
+                </div>
+                <div class="text-left md:text-right text-[0.9rem] text-light-gray opacity-80">
+                    Active Monitoring
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
+                <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
+                    <span class="text-[0.8rem] text-accent-red uppercase">WIN</span>
+                </div>
+                <div>
+                    <div class="text-[1.15rem] font-semibold">Maintenance Windows</div>
+                    <p class="text-[0.9rem] text-light-gray opacity-70">Scheduled updates performed during off-peak windows.</p>
+                </div>
+                <div class="text-left md:text-right text-[0.9rem] text-light-gray opacity-80">
+                    Off-Peak Operations
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Panel -->
+<section class="content-section bg-primary-dark" id="contact">
+    <div class="container-inner">
+        <div class="booking-box bg-ribbon-bg border border-border-color rounded-[16px] p-[40px_20px] lg:p-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[50px] lg:gap-[60px] items-center relative overflow-hidden reveal">
+            <div>
+                <h2 class="text-[2.3rem] lg:text-[2.8rem] leading-[1.15] mb-[20px]">Build a reliable baseline today</h2>
+                <p class="text-light-gray opacity-80 mb-[30px]">Get in touch with our operations team to schedule a custom audit of your network or to discuss an infrastructure upgrade.</p>
+                <div class="flex flex-col gap-[16px]">
+                    <div class="text-[1rem] font-semibold">
+                        <span class="block text-[0.8rem] text-accent-red uppercase">Write to us</span>
+                        connect@nftech.placeholder
+                    </div>
+                    <div class="text-[1rem] font-semibold">
+                        <span class="block text-[0.8rem] text-accent-red uppercase">Direct Desk</span>
+                        +1 (555) 019-2831
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form class="flex flex-col gap-[16px]">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
+                        <input type="text" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Full Name" required>
+                        <input type="email" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Corporate Email" required>
+                    </div>
+                    <select class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red appearance-none">
+                        <option>Network Systems Architecture</option>
+                        <option>Physical Security & Monitoring</option>
+                        <option>Maintenance & Consultation Audits</option>
+                        <option>Cloud Migration & Hosting</option>
+                    </select>
+                    <textarea rows="4" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Brief details about your operations..." required></textarea>
+                    <button type="submit" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[6px] font-semibold text-[0.9rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Initialize Connection</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

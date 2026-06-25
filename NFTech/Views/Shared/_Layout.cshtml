@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>@ViewData["Title"] - NF Tech | Premium IT Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="bg-primary-dark text-white overflow-x-hidden">
+    <header id="header" class="premium-header">
+        <div class="flex justify-between items-center w-full">
+            <div class="flex items-center relative z-[1100]">
+                <a asp-controller="Home" asp-action="Index" class="text-white text-[1.4rem] font-bold tracking-tight no-underline">
+                    NF <span class="text-accent-red">Tech</span>
+                </a>
+            </div>
+
+            <ul class="nav-links-custom flex gap-[30px] list-none items-center" id="nav-links">
+                <li class="w-full flex justify-center items-center lg:w-auto">
+                    <a href="/home/index#hero" class="nav-link-item text-white no-underline font-medium text-[1.4rem] lg:text-[0.9rem] opacity-80 hover:opacity-100 transition-premium lg:font-semibold">Home</a>
+                </li>
+                <li class="w-full flex justify-center items-center lg:w-auto">
+                    <a href="/home/index#about" class="nav-link-item text-white no-underline font-medium text-[1.4rem] lg:text-[0.9rem] opacity-80 hover:opacity-100 transition-premium lg:font-semibold">About</a>
+                </li>
+                <li class="nav-item-dropdown w-full flex justify-center items-center lg:w-auto">
+                    <a asp-controller="Home" asp-action="Services" class="dropdown-trigger nav-link-item inline-flex items-center gap-[6px] text-white no-underline font-medium text-[1.4rem] lg:text-[0.9rem] opacity-80 hover:opacity-100 transition-premium lg:font-semibold">
+                        Services <span class="arrow text-[1rem] lg:text-[0.75rem] inline-block transition-transform duration-300">&#9662;</span>
+                    </a>
+                    <ul class="dropdown-menu-custom">
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="network" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">Network & Connectivity</a></li>
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="infrastructure" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">Infrastructure</a></li>
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="security" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">Cyber & Physical Security</a></li>
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="managed" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">Managed Services</a></li>
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="digital" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">Digital Solutions</a></li>
+                        <li class="w-full"><a asp-controller="Home" asp-action="Services" asp-route-id="ai" class="block py-[14px] lg:py-[10px] px-[24px] text-white no-underline text-[1.1rem] lg:text-[0.85rem] font-medium opacity-80 transition-premium text-center hover:opacity-100 hover:bg-white/5 hover:text-accent-red">AI & Automation</a></li>
+                    </ul>
+                </li>
+                <li class="w-full flex justify-center items-center lg:w-auto">
+                    <a href="/home/index#events" class="nav-link-item text-white no-underline font-medium text-[1.4rem] lg:text-[0.9rem] opacity-80 hover:opacity-100 transition-premium lg:font-semibold">Commitments</a>
+                </li>
+                <li class="mobile-btn w-full justify-center lg:hidden flex mt-[20px]">
+                    <a asp-controller="Home" asp-action="Services" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[1.1rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Catalog Overview</a>
+                </li>
+            </ul>
+
+            <div class="flex items-center gap-[12px] relative z-[1100]">
+                <a asp-controller="Home" asp-action="Services" class="hidden lg:inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Catalog Overview</a>
+                <button class="menu-toggle flex justify-center bg-accent-red text-white border-none rounded-[100px] py-[12px] px-[28px] font-semibold text-[0.9rem] tracking-[0.5px] cursor-pointer items-center gap-[10px] transition-premium z-[1100] hover:bg-[#961515] hover:-translate-y-[2px]" id="menu-toggle" aria-label="Toggle Navigation menu">
+                    <span>Menu</span>
+                    <span class="hamburger-lines flex flex-col justify-between w-[16px] h-[12px]">
+                        <span class="w-full h-[2px] bg-white transition-premium origin-center"></span>
+                        <span class="w-full h-[2px] bg-white transition-premium origin-center"></span>
+                        <span class="w-full h-[2px] bg-white transition-premium origin-center"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-[#040911] border-t border-border-color pt-[80px] pb-[40px] px-8 md:px-[8%]">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] gap-[40px] lg:gap-[80px] pb-[60px] border-b border-border-color">
+            <div>
+                <span class="text-white text-[1.4rem] font-bold tracking-tight">NF <span class="text-accent-red">Tech</span></span>
+                <p class="text-light-gray opacity-70 mt-[20px] max-w-[400px]">We build, maintain, and protect corporate IT infrastructures, delivering solid systems with modern defense standards.</p>
+            </div>
+            <div>
+                <h4 class="text-[1.1rem] mb-[24px] tracking-[1px] uppercase text-white font-display">Navigation</h4>
+                <ul class="list-none flex flex-col gap-[16px]">
+                    <li><a href="/home/index#hero" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Overview</a></li>
+                    <li><a href="/home/index#about" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Company Profile</a></li>
+                    <li><a asp-controller="Home" asp-action="Services" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Service Verticals</a></li>
+                    <li><a href="/home/index#contact" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Contact Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[1.1rem] mb-[24px] tracking-[1px] uppercase text-white font-display">Capabilities</h4>
+                <ul class="list-none flex flex-col gap-[16px]">
+                    <li><a asp-controller="Home" asp-action="Services" asp-route-id="network" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Network Failovers</a></li>
+                    <li><a asp-controller="Home" asp-action="Services" asp-route-id="security" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Biometric Security</a></li>
+                    <li><a asp-controller="Home" asp-action="Services" asp-route-id="infrastructure" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Server Migration</a></li>
+                    <li><a asp-controller="Home" asp-action="Services" asp-route-id="managed" class="text-light-gray opacity-75 no-underline transition-premium hover:text-accent-red hover:opacity-100">Environment Auditing</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1200px] mx-auto mt-[40px] flex justify-between text-[0.9rem] text-light-gray opacity-60 flex-wrap gap-[16px]">
+            <p>&copy; <span id="year"></span> NF Tech. Subject to explicit SLAs & regional compliance protocols.</p>
+            <p>Sleek IT Engineering</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
