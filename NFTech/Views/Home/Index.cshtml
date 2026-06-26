@@ -89,35 +89,112 @@
         <div class="flex justify-between items-end mb-[60px] flex-wrap gap-[24px] reveal">
             <div>
                 <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Divisions</span>
-                <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">A simplified system for all IT operations</h2>
+                <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">IT & Software Solutions in South Africa</h2>
             </div>
-            <a asp-controller="Home" asp-action="Services" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium cursor-pointer whitespace-nowrap border border-border-color text-white bg-white/5 hover:border-white hover:bg-white/10 hover:-translate-y-[2px]">Catalog Page &rarr;</a>
+            <a asp-controller="Home" asp-action="Services" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[100px] font-semibold text-[0.9rem] no-underline transition-premium cursor-pointer whitespace-nowrap border border-border-color text-white bg-white/5 hover:border-white hover:bg-white/10 hover:-translate-y-[2px]">Learn More &rarr;</a>
         </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-[50px] lg:gap-[30px]">
-            <div class="arch-card bg-transparent text-left transition-premium reveal">
-                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
-                    <img src="~/images/battery.jpg" alt="Network & Infrastructure" class="w-full h-full object-cover grayscale transition-premium">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+            
+            <!-- Service Card 1 -->
+            <a asp-controller="Home" asp-action="Services" asp-route-id="network" class="group relative block w-full h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden transition-premium reveal">
+                <!-- Background Image -->
+                <img src="~/images/battery.jpg" alt="Network & Infrastructure" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-premium duration-700">
+                
+                <!-- Dark Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent opacity-90 group-hover:opacity-100 transition-premium z-[1]"></div>
+                
+                <!-- Text Content -->
+                <div class="absolute bottom-0 left-0 w-full p-[30px] pr-[90px] flex flex-col justify-end z-[2]">
+                    <h3 class="text-[1.3rem] lg:text-[1.5rem] mb-[12px] text-white font-bold leading-[1.2]">Network & Infrastructure</h3>
+                    <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Fast structured cabling, dedicated business fiber setups, and customized automated backup lines to ensure continuous workflows.</p>
                 </div>
-                <h3 class="text-[1.4rem] mb-[12px] text-white">Network & Infrastructure</h3>
-                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Fast structured cabling, dedicated business fiber setups, and customized automated backup lines to ensure continuous workflows.</p>
-            </div>
-
-            <div class="arch-card bg-transparent text-left transition-premium reveal">
-                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
-                    <img src="~/images/security.jpg" alt="Cyber & physical Safety" class="w-full h-full object-cover grayscale transition-premium">
+                
+                <!-- Corner Cutout Structure -->
+                <div class="absolute bottom-0 right-0 w-[70px] h-[70px] bg-primary-dark rounded-tl-[24px] z-[3]">
+                    <!-- Top-right inverse curve blending into cutout -->
+                    <svg class="absolute top-[-20px] right-0 text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    <!-- Bottom-left inverse curve blending into cutout -->
+                    <svg class="absolute bottom-0 left-[-20px] text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    
+                    <!-- Icon Button -->
+                    <div class="absolute bottom-[10px] right-[10px] w-[50px] h-[50px] rounded-full bg-[#121f31] flex items-center justify-center text-white transition-premium group-hover:bg-accent-red group-hover:shadow-[0_8px_20px_rgba(183,28,28,0.4)] group-hover:-translate-y-[2px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </div>
                 </div>
-                <h3 class="text-[1.4rem] mb-[12px] text-white">Cyber & physical Safety</h3>
-                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Comprehensive managed firewalls, individual computer protections, biometric access entry, and modern CCTV video surveillance setups.</p>
-            </div>
+            </a>
 
-            <div class="arch-card bg-transparent text-left transition-premium reveal">
-                <div class="arch-image-wrapper w-full h-[280px] lg:h-[340px] rounded-t-[160px] overflow-hidden mb-[24px] border border-border-color relative">
-                    <img src="~/images/support.jpg" alt="Managed Support" class="w-full h-full object-cover grayscale transition-premium">
+            <!-- Service Card 2 -->
+            <a asp-controller="Home" asp-action="Services" asp-route-id="security" class="group relative block w-full h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden transition-premium reveal">
+                <!-- Background Image -->
+                <img src="~/images/security.jpg" alt="Cyber & Physical Safety" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-premium duration-700">
+                
+                <!-- Dark Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent opacity-90 group-hover:opacity-100 transition-premium z-[1]"></div>
+                
+                <!-- Text Content -->
+                <div class="absolute bottom-0 left-0 w-full p-[30px] pr-[90px] flex flex-col justify-end z-[2]">
+                    <h3 class="text-[1.3rem] lg:text-[1.5rem] mb-[12px] text-white font-bold leading-[1.2]">Cyber & Physical Safety</h3>
+                    <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Comprehensive managed firewalls, individual computer protections, biometric access entry, and modern CCTV video surveillance setups.</p>
                 </div>
-                <h3 class="text-[1.4rem] mb-[12px] text-white">Managed Support</h3>
-                <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Planned software updates, routine hardware health evaluations, structural environment audits, and post-event incident reporting.</p>
-            </div>
+                
+                <!-- Corner Cutout Structure -->
+                <div class="absolute bottom-0 right-0 w-[70px] h-[70px] bg-primary-dark rounded-tl-[24px] z-[3]">
+                    <svg class="absolute top-[-20px] right-0 text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    <svg class="absolute bottom-0 left-[-20px] text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    
+                    <div class="absolute bottom-[10px] right-[10px] w-[50px] h-[50px] rounded-full bg-[#121f31] flex items-center justify-center text-white transition-premium group-hover:bg-accent-red group-hover:shadow-[0_8px_20px_rgba(183,28,28,0.4)] group-hover:-translate-y-[2px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service Card 3 -->
+            <a asp-controller="Home" asp-action="Services" asp-route-id="managed" class="group relative block w-full h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden transition-premium reveal">
+                <!-- Background Image -->
+                <img src="~/images/support.jpg" alt="Managed Support" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-premium duration-700">
+                
+                <!-- Dark Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent opacity-90 group-hover:opacity-100 transition-premium z-[1]"></div>
+                
+                <!-- Text Content -->
+                <div class="absolute bottom-0 left-0 w-full p-[30px] pr-[90px] flex flex-col justify-end z-[2]">
+                    <h3 class="text-[1.3rem] lg:text-[1.5rem] mb-[12px] text-white font-bold leading-[1.2]">Managed Support</h3>
+                    <p class="text-light-gray opacity-75 text-[0.95rem] leading-[1.5]">Planned software updates, routine hardware health evaluations, structural environment audits, and post-event incident reporting.</p>
+                </div>
+                
+                <!-- Corner Cutout Structure -->
+                <div class="absolute bottom-0 right-0 w-[70px] h-[70px] bg-primary-dark rounded-tl-[24px] z-[3]">
+                    <svg class="absolute top-[-20px] right-0 text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    <svg class="absolute bottom-0 left-[-20px] text-primary-dark w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0,20 a20,20 0 0,0 20,-20 v20 h-20 z" />
+                    </svg>
+                    
+                    <div class="absolute bottom-[10px] right-[10px] w-[50px] h-[50px] rounded-full bg-[#121f31] flex items-center justify-center text-white transition-premium group-hover:bg-accent-red group-hover:shadow-[0_8px_20px_rgba(183,28,28,0.4)] group-hover:-translate-y-[2px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            
         </div>
     </div>
 </section>
@@ -129,7 +206,6 @@
             <span class="text-accent-red font-semibold text-[0.85rem] uppercase tracking-[2px] block mb-[12px]">Protocols</span>
             <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">Performance Benchmarks & Standards</h2>
         </div>
-
         <div class="mt-[50px] flex flex-col gap-[16px] reveal">
             <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
                 <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
@@ -143,7 +219,6 @@
                     Operational Priority Tier
                 </div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
                 <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
                     <span class="text-[0.8rem] text-accent-red uppercase">UP</span>
@@ -156,7 +231,6 @@
                     Active Monitoring
                 </div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-[80px_1.5fr_1fr] items-center p-[24px] bg-white/5 border border-border-color rounded-[8px] transition-premium gap-[16px] md:gap-0 hover:border-accent-red hover:bg-white/10 text-left">
                 <div class="w-[50px] h-[50px] bg-ribbon-bg border border-border-color flex flex-col items-center justify-center font-display font-bold rounded-[6px]">
                     <span class="text-[0.8rem] text-accent-red uppercase">WIN</span>
@@ -180,6 +254,7 @@
             <div>
                 <h2 class="text-[2.3rem] lg:text-[2.8rem] leading-[1.15] mb-[20px]">Build a reliable baseline today</h2>
                 <p class="text-light-gray opacity-80 mb-[30px]">Get in touch with our operations team to schedule a custom audit of your network or to discuss an infrastructure upgrade.</p>
+                
                 <div class="flex flex-col gap-[16px]">
                     <div class="text-[1rem] font-semibold">
                         <span class="block text-[0.8rem] text-accent-red uppercase">Write to us</span>
@@ -197,13 +272,23 @@
                         <input type="text" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Full Name" required>
                         <input type="email" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Corporate Email" required>
                     </div>
-                    <select class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red appearance-none">
-                        <option>Network Systems Architecture</option>
-                        <option>Physical Security & Monitoring</option>
-                        <option>Maintenance & Consultation Audits</option>
-                        <option>Cloud Migration & Hosting</option>
-                    </select>
+                    
+                    <div class="relative w-full">
+                        <select class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] pl-[18px] pr-[40px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red appearance-none cursor-pointer">
+                            <option>Network Systems Architecture</option>
+                            <option>Physical Security & Monitoring</option>
+                            <option>Maintenance & Consultation Audits</option>
+                            <option>Cloud Migration & Hosting</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-[14px] pointer-events-none text-light-gray opacity-70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    
                     <textarea rows="4" class="w-full bg-[#040911]/60 border border-border-color rounded-[6px] py-[14px] px-[18px] text-white text-[0.95rem] transition-premium focus:outline-none focus:border-accent-red" placeholder="Brief details about your operations..." required></textarea>
+                    
                     <button type="submit" class="inline-flex items-center justify-center px-[32px] py-[14px] rounded-[6px] font-semibold text-[0.9rem] no-underline transition-premium border-none cursor-pointer whitespace-nowrap bg-accent-red text-white hover:bg-[#961515] hover:-translate-y-[2px]">Initialize Connection</button>
                 </form>
             </div>
