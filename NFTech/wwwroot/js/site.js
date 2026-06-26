@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Global UI Elements ---
-
     // Auto-update footer year
     const yearEl = document.getElementById('year');
     if (yearEl) {
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
     if (sections.length > 0 && sidebarLinks.length > 0) {
-        
         // Updates the query string adhering strictly to MVC routing patterns: /home/services?id=targetId
         function safeUpdateURL(targetId) {
             if (!targetId) return;
@@ -109,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // On Load path detection and smooth scroll
         const initialTargetEl = document.getElementById('initial-target');
         let initialTargetId = initialTargetEl ? initialTargetEl.getAttribute('data-target') : '';
-        
+
         // Fallback: Check Query Params if attribute empty
         if (!initialTargetId) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -120,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetSection = document.getElementById(initialTargetId);
             if (targetSection) {
                 setTimeout(() => {
-                    const offset = window.innerWidth <= 1024 ? 160 : 240;
+                    const offset = window.innerWidth <= 1024 ? 168 : 248;
                     const bodyRect = document.body.getBoundingClientRect().top;
                     const elementRect = targetSection.getBoundingClientRect().top;
                     const elementPosition = elementRect - bodyRect;
@@ -140,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             sections.forEach(sec => {
                 const secTop = sec.getBoundingClientRect().top + window.scrollY;
-                const offset = window.innerWidth <= 1024 ? 200 : 260;
+                const offset = window.innerWidth <= 1024 ? 208 : 268;
 
                 if (window.scrollY >= secTop - offset) {
                     currentActiveId = sec.getAttribute('id');
@@ -160,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const linkOffsetLeft = link.offsetLeft;
                                 const linkWidth = link.offsetWidth;
                                 const containerWidth = container.offsetWidth;
-                                
+
                                 container.scrollTo({
                                     left: linkOffsetLeft - (containerWidth / 2) + (linkWidth / 2),
                                     behavior: 'smooth'
@@ -182,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    const offset = window.innerWidth <= 1024 ? 160 : 240;
+                    const offset = window.innerWidth <= 1024 ? 168 : 248;
                     const bodyRect = document.body.getBoundingClientRect().top;
                     const elementRect = targetSection.getBoundingClientRect().top;
                     const elementPosition = elementRect - bodyRect;
@@ -192,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
-                    
+
                     safeUpdateURL(targetId);
                 }
             });

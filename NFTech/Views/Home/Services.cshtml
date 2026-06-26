@@ -3,7 +3,6 @@
     // Allow JS to pick up initial section to scroll to
     var targetDivision = ViewData["TargetDivision"]?.ToString();
 }
-
 <div id="initial-target" data-target="@targetDivision" style="display:none;"></div>
 
 <!-- Services Header Hero -->
@@ -22,9 +21,8 @@
 <!-- Division Explorer Layout -->
 <section class="bg-primary-dark pt-[50px] overflow-visible content-section" id="explorer">
     <div class="container-inner">
-        
         <!-- Horizontal Sticky Division Switcher Navigation Capsule -->
-        <div class="sticky top-[80px] lg:top-[110px] z-[100] bg-[#121f31]/85 backdrop-blur-[15px] border border-border-color rounded-[20px] lg:rounded-[80px] p-[6px] lg:p-[8px] flex justify-between gap-[12px] overflow-x-auto mb-[80px] lg:mb-[140px] shadow-[0_15px_35px_rgba(0,0,0,0.3)] explorer-nav-capsule" style="scrollbar-width: none;">
+        <div class="sticky top-[88px] lg:top-[118px] z-[100] bg-[#121f31]/85 backdrop-blur-[15px] border border-border-color rounded-[20px] lg:rounded-[80px] p-[6px] lg:p-[8px] flex justify-between gap-[12px] overflow-x-auto mb-[80px] lg:mb-[140px] shadow-[0_15px_35px_rgba(0,0,0,0.3)] explorer-nav-capsule" style="scrollbar-width: none;">
             <a href="/home/services?id=network" data-target="network" class="sidebar-link active flex items-center p-[10px_18px] lg:p-[12px_24px] rounded-[50px] text-white no-underline text-[0.85rem] lg:text-[0.9rem] font-semibold bg-transparent border border-transparent transition-premium gap-[12px] whitespace-nowrap hover:bg-white/5 [&.active]:bg-accent-red [&.active]:shadow-[0_8px_20px_rgba(183,28,28,0.3)]">
                 <div class="sidebar-badge w-[24px] h-[24px] bg-white/10 flex items-center justify-center font-display text-[0.75rem] font-bold rounded-full transition-premium">01</div> Network
             </a>
@@ -48,7 +46,6 @@
         <style>
             .explorer-nav-capsule::-webkit-scrollbar { display: none; }
             .sidebar-link.active .sidebar-badge { background: theme('colors.white'); color: theme('colors.accent-red'); }
-            
             .cap-card::before {
                 content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background-color: transparent; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             }
@@ -61,9 +58,8 @@
 
         <!-- Detailed Subdivision Contents -->
         <div class="flex flex-col gap-[120px]">
-
             <!-- Division 1: Network & Connectivity -->
-            <div id="network" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+            <div id="network" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/battery.jpg" alt="Network architecture" class="w-full h-full object-cover grayscale transition-premium">
@@ -95,7 +91,7 @@
             </div>
 
             <!-- Division 2: Infrastructure -->
-            <div id="infrastructure" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+            <div id="infrastructure" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/infrastructure.jpg" alt="Hardware setup" class="w-full h-full object-cover grayscale transition-premium">
@@ -131,7 +127,7 @@
             </div>
 
             <!-- Division 3: Cyber & Physical Security -->
-            <div id="security" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+            <div id="security" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/security.jpg" alt="Technical security" class="w-full h-full object-cover grayscale transition-premium">
@@ -167,7 +163,7 @@
             </div>
 
             <!-- Division 4: Managed Services & Consulting -->
-            <div id="managed" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+            <div id="managed" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/digital.jpg" alt="Consulting environment" class="w-full h-full object-cover grayscale transition-premium">
@@ -199,7 +195,7 @@
             </div>
 
             <!-- Division 5: Digital -->
-            <div id="digital" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
+            <div id="digital" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] border-b border-border-color pb-[60px] lg:pb-[100px] pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/code.jpg" alt="Development structures" class="w-full h-full object-cover grayscale transition-premium">
@@ -227,7 +223,7 @@
             </div>
 
             <!-- Division 6: AI Integration -->
-            <div id="ai" class="division-block scroll-mt-[160px] lg:scroll-mt-[260px] pb-0 pt-[20px] reveal">
+            <div id="ai" class="division-block scroll-mt-[168px] lg:scroll-mt-[268px] pb-0 pt-[20px] reveal">
                 <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[24px] lg:gap-[40px] items-center mb-[30px] lg:mb-[50px]">
                     <div class="division-arch-frame w-full h-[200px] lg:h-[280px] rounded-t-[100px] lg:rounded-t-[140px] overflow-hidden border border-border-color relative">
                         <img src="~/images/AI.jpg" alt="AI integration" class="w-full h-full object-cover grayscale transition-premium">
@@ -257,7 +253,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -280,7 +275,8 @@
             <span class="text-[0.8rem] font-bold uppercase tracking-[2px] text-accent-red mb-[12px] block">Service Levels</span>
             <h2 class="text-[2.3rem] lg:text-[3rem] tracking-[-1px]">Operational Commitments</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[30px]">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
             <div class="bg-white/5 border border-border-color rounded-[12px] p-[40px_30px] text-center transition-premium hover:border-white/20 hover:-translate-y-[4px] reveal">
                 <span class="text-[2rem] text-accent-red mb-[24px] inline-block">⚡</span>
                 <h3 class="text-[1.3rem] mb-[12px] text-white">Targeted Response Times</h3>
